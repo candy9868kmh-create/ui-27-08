@@ -1,0 +1,277 @@
+<?php
+// About Us - SkirtStory
+// PHP Version of the about page
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SkirtStory</title>
+    <meta name="description" content="Learn about SkirtStory's mission, values, and commitment to premium women's skirt collections and fashion-forward designs for modern women worldwide.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Modern Women's Fashion Color Palette */
+        :root {
+            --primary-color: #e91e63;
+            --secondary-color: #f48fb1;
+            --accent-color: #ad1457;
+            --fashion-pink: #ec407a;
+            --blush-pink: #f8bbd9;
+            --deep-rose: #c2185b;
+            --warm-gray: #6b7280;
+            --denim-blue: #1976d2;
+            --soft-lavender: #e1bee7;
+            --cream: #fdf4f4;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background-light: #fce4ec;
+            --white: #ffffff;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        /* About Hero */
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--fashion-pink) 50%, var(--secondary-color) 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* About Content */
+        .about-content {
+            padding: 6rem 0;
+        }
+
+        .about-section {
+            margin-bottom: 6rem;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .value-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-hero {
+                padding: 6rem 0 3rem;
+            }
+
+            .about-content {
+                padding: 3rem 0;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.php" class="logo">SkirtStory</a>
+                <ul class="nav-menu">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About SkirtStory</h1>
+            <p>Crafting beautiful skirts that tell your unique fashion story with elegance, comfort, and contemporary style for the modern woman.</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-section">
+                <h2>Our Mission</h2>
+                <p>At SkirtStory, we believe every woman deserves to express her individuality through beautiful, well-crafted skirts. Our mission is to create stunning skirt collections that blend contemporary fashion with timeless elegance, empowering women to feel confident and stylish in every moment.</p>
+                <p>From mini to maxi, denim to silk, our carefully curated collections offer something special for every occasion, body type, and personal style. We are committed to quality craftsmanship, sustainable practices, and inclusive sizing to ensure every woman can find her perfect skirt story.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Quality Craftsmanship</h3>
+                        <p>Every skirt is made with premium fabrics and attention to detail, ensuring durability and comfort that lasts.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Sustainable Fashion</h3>
+                        <p>We're committed to ethical manufacturing and eco-friendly materials to protect our planet for future generations.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Inclusive Sizing</h3>
+                        <p>Beautiful fashion should be accessible to all women, which is why we offer comprehensive size ranges and fits.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Story</h2>
+                <p>Founded in 2020 by fashion enthusiasts who believe in the power of a perfect skirt, SkirtStory began as a small boutique with a big dream. We noticed that while trends come and go, the skirt remains a timeless piece that can transform any wardrobe and boost confidence instantly.</p>
+                <p>Today, we work with talented designers and skilled artisans worldwide to bring you collections that celebrate femininity, comfort, and style. From our headquarters, we continue to grow our global community of women who share our passion for beautiful, well-made skirts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 SkirtStory. All rights reserved. | 
+            <a href="privacy.php">Privacy Policy</a> | 
+            <a href="contact.php">Contact Us</a></p>
+        </div>
+    </footer>
+</body>
+</html>
